@@ -1,0 +1,161 @@
+.showBorder{border:solid 1px #333333;}
+.heightAdd{height: 3em;}
+.leftBg{background:darkgray;height:2em;}
+.rightBg{background:lightblue;height:2em;}
+.centerBg{background:lightcoral;height:2em;}
+.columnBg{background:lightseagreen;height:2em;}
+
+/*水平居中 */
+.parent1{text-align: center;}
+.child1{display: inline-block;}
+.h-center1{width:400px;margin:0 auto;}
+.h-center2{display:table;margin:0 auto;}
+.parent2{position:relative;}
+/*或者实用margin-left的负值为盒子宽度的一半也可以实现，不过这样就必须知道盒子的宽度，但兼容性好*/
+.child2{position:absolute;left:50%;transform:translate(-50%);}
+
+/*垂直居中 */
+/*第一种方法*/
+.parent3{display:table-cell;vertical-align:middle;height:3em;}
+/*第二种方法*/
+.parent4{display:inline-block;vertical-align:middle;line-height:3em;}
+
+.parent5{position:relative;}
+.child5{position:absolute;top:50%;transform:translate(0,-50%);}
+
+.parent6{display:flex;align-items:center;}
+
+/*水平垂直居中 */
+.parent7{display:table-cell;vertical-align:middle;text-align:center;width:100vw;}
+.child7{display:inline-block;}
+
+.parent8{position:relative;}
+.child8{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+
+.parent9{display:flex;justify-content:center;align-items:center;}
+
+/*左列定宽，右列自适应 */
+.left{float:left;width:300px;}
+.right{margin-left:300px}
+
+.left1{width:300px;float:left;}
+.right1-fix{width:100%;margin-left:-300px;float:right;}
+.right1{margin-left:300px;}
+
+.left2{width:300px;float:left;}
+.right2{overflow:hidden;}
+
+.parent-table{display:table;table-layout:fixed;width:100%;margin-bottom:1em;}
+.left3{width:300px;}
+.right3,.left3{display:table-cell;}
+
+.parent-flex{display:flex;}
+.left4{width:300px;}
+.right4{flex:1;}
+
+/*右列定宽，左列自适应 */
+.left5{margin-right:-300px;width:100%;float:left;}
+.right5{float:right;width:300px;}
+
+.left6{display:table-cell;}
+.right6{width:300px;display:table-cell;}
+
+.left7{flex:1;}
+.right7{width:300px;}
+
+/*两列定宽，一列自适应*/
+.left8,.center8{float:left;width:300px;}
+.right8{margin-left:400px;}
+
+.left9,.center9{float:left;width:300px;}
+.right9{overflow:hidden;}
+
+.left10,.center10,.right10{display:table-cell;}
+.left10,.center10{width:300px;}
+
+.left11,.center11{width:300px;}
+.right11{flex:1}
+
+/*两侧定宽，中栏自适应*/
+.left12  {width:300px; float:left;}
+.center12{float:left;width:100%;margin-right:-600px;}
+.right12 {width:300px;float:right;}
+
+.left13,.center13,.right13{display:table-cell;}
+.left13{width:300px;}
+.right13{width:300px;}
+
+.left14{width:300px;}
+.center14{flex:1;}
+.right14{width:300px;}
+
+/*一列不定宽，一列自适应*/
+.left15{float:left;}
+.right15{overflow:hidden;}
+
+.right16{flex:1;}
+
+/*多列等分布局*/
+
+.parent17{
+    margin-left:-20px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;;
+    box-sizing: content-box;
+}/*假设列之间的间距为20px*/
+.column17{float:left;width:25%;padding-left:20px;box-sizing: border-box;}
+
+.parent18-fix{margin-left:-20px;}
+.parent18{display:table;table-layout:fixed;width:100%;}
+.column18{display:table-cell;padding-left:20px;}
+
+.column19{flex:1;}
+.column19+.column19{margin-left:20px;}
+
+/*九宫格布局*/
+.row20{display:table-row;}
+.item20{display:table-cell;width:33.3%;height:200px;}
+
+.parent21{display:flex;flex-direction:column;}
+.row21{height:100px;display:flex;}
+.item21{width:100px;}
+
+/*全屏布局*/
+.parent22{height:500px;overflow:hidden;position:relative;}
+.top22{position:absolute;top:0;left:0;right:0;height:100px;}
+.left22{position:absolute;top:100px;left:0;bottom:50px;width:200px;}
+.right22{position:absolute;overflow:auto;left:200px;right:0;top:100px;bottom:50px;}
+.bottom22{position:absolute;left:0;right:0;bottom:0;height:50px;}
+
+.parent23{display:flex;flex-direction:column;}
+.top23{height:100px;}
+.bottom23{height:50px;}
+.middle23{flex:1;display:flex;}
+.left23{width:200px;}
+.right23{flex:1;overflow:auto;}
+
+/*--Tooltip--*/
+.tooltip{
+    position: relative;
+    left:100px;
+    padding: 0 20px;
+    width: 380px;
+    height: 80px;
+    border-radius: 8px;
+    background: #efefef;
+    font-size: 18px;
+    line-height: 80px;
+}
+.tooltip:after{
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    z-index: 1;
+    display: block;
+    margin-top: -15px;
+    width: 0;
+    border-color: transparent #efefef;
+    border-style: solid;
+    border-width: 15px 15px 15px 0;
+    content: "";
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <title>CSS布局技巧</title>
+    <link rel="stylesheet" href="css/reset.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="css/switch-button.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="css/milk-checkbox.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" media="screen" type="text/css"/>
+</head>
+
+<body>
+<div class="tooltip">ToolTips示例</div>
+<h3>水平居中</h3>
+<h4>使用inline-block 和 text-align实现</h4>
+<div class="parent1 heightAdd">
+    <div class="child1 showBorder">
+        <p>.parent1{text-align: center;}</p>
+        <p>.child1{display: inline-block;}</p>
+    </div>
+</div>
+<h4>使用margin:0 auto来实现</h4>
+<div class="heightAdd">
+    <div class="h-center1 showBorder">
+        <p>.h-center1{width:400px;margin:0 auto;}</p>
+    </div>
+</div>
+<h4>使用table实现</h4>
+<div class="heightAdd">
+    <div class="h-center2 showBorder">
+        <p>.h-center2{display:table;margin:0 auto;}</p>
+    </div>
+</div>
+<h4>使用绝对定位实现</h4>
+<div class="parent2 heightAdd">
+    <div class="child2 showBorder">
+        <p>.parent2{position:relative;}</p>
+        <p>.child2{position:absolute;left:50%;transform:translate(-50%);}</p>
+    </div>
+</div>
+
+<h3>垂直居中</h3>
+<h4>vertical-align</h4>
+<div class="parent3 showBorder">
+    <div class="showBorder" style="height:1em;">
+        .parent3{display:table-cell;vertical-align:middle;height:3em;}
+    </div>
+</div>
+<div class="parent4 showBorder">
+    <div class="showBorder" style="height:1em;display:inline;">
+        .parent4{display:inline-block;vertical-align:middle;line-height:3em;}
+    </div>
+</div>
+<h4>实用绝对定位</h4>
+<div class="parent5 heightAdd showBorder">
+    <div class="child5 showBorder">
+        .parent5{position:relative;}
+        .child5{position:absolute;top:50%;transform:translate(0,-50%);}
+    </div>
+</div>
+<h4>实用flex实现</h4>
+<div class="parent6 heightAdd showBorder">
+    <div class="showBorder">
+        .parent6{display:flex;align-items:center;}
+    </div>
+</div>
+
+<h3>水平垂直全部居中</h3>
+<h4>利用vertical-align,text-align,inline-block实现</h4>
+<div class="parent7 heightAdd showBorder">
+    <div class="child7 showBorder">
+        .parent7{display:table-cell;vertical-align:middle;text-align:center;width:100vw;}
+        .child7{display:inline-block;}
+    </div>
+</div>
+<h4>利用绝对定位实现</h4>
+<div class="parent8 heightAdd showBorder">
+    <div class="child8 showBorder">
+        .parent8{position:relative;}
+        .child8{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+    </div>
+</div>
+<h4>利用flex实现</h4>
+<div class="parent9 heightAdd showBorder">
+    <div class="showBorder">
+        .parent9{display:flex;justify-content:center;align-items:center;}
+    </div>
+</div>
+
+<h3>左列定宽，右列自适应</h3>
+<h4>利用float+margin实现</h4>
+<div class="heightAdd">
+    <div class="left leftBg">
+        .left{float:left;width:300px;}
+    </div>
+    <div class="right rightBg">
+        .right{margin-left:300px;}
+    </div>
+</div>
+<h4>利用float+margin(fix)实现</h4>
+<div class="heightAdd">
+    <div class="left1 leftBg">.left1{width:300px;float:left;}</div>
+    <div class="right1-fix ">
+        <div class="right1 rightBg">
+            .right1-fix{width:100%;margin-left:-300px;float:right;}
+            .right1{margin-left:300px;}
+        </div>
+    </div>
+</div>
+<h4>使用float+overflow实现</h4>
+<div class="heightAdd">
+    <div class="left2 leftBg">
+        .left2{width:300px;float:left;}
+    </div>
+    <div class="right2 rightBg">
+        .right2{overflow:hidden;}
+    </div>
+</div>
+<h4>使用table实现</h4>
+<div class="parent-table heightAdd">
+    <div class="left3 leftBg">
+        .left3{width:300px;}
+    </div>
+    <div class="right3 rightBg">
+        .right3,.left3{display:table-cell;}
+        .parent-table{display:table;table-layout:fixed;width:100%;}
+    </div>
+</div>
+<h4>实用flex实现</h4>
+<div class="parent-flex heightAdd">
+    <div class="left4 leftBg">
+        .left4{width:300px;}
+    </div>
+    <div class="right4 rightBg">
+        .parent-flex{display:flex;}
+        .right4{flex:1;}
+    </div>
+</div>
+
+<h3>右列定宽，左列自适应</h3>
+<h4>实用float+margin实现</h4>
+<div class="heightAdd">
+    <div class="left5 leftBg">
+        .left5{margin-right:-300px;width:100%;float:left;}
+    </div>
+    <div class="right5 rightBg">
+        .right5{float:right;width:300px;}
+    </div>
+</div>
+<h4>使用table实现</h4>
+<div class="parent-table heightAdd">
+    <div class="left6 leftBg">
+        .parent-table{display:table;table-layout:fixed;width:100%;margin-bottom:1em;}
+        .left6{display:table-cell;}
+    </div>
+    <div class="right6 rightBg">
+        .right6{width:300px;display:table-cell;}
+    </div>
+</div>
+<h4>实用flex实现</h4>
+<div class="parent-flex heightAdd">
+    <div class="left7 leftBg">
+        .parent-flex{display:flex;}
+        .left7{flex:1;}
+    </div>
+    <div class="right7 rightBg">
+        .right7{width:300px;}
+    </div>
+</div>
+
+<h3>两列定宽，一列自适应</h3>
+<h4>利用float+margin实现</h4>
+<div class="heightAdd">
+    <div class="left8 leftBg">
+        .left8,.center8{float:left;width:300px;}
+    </div>
+    <div class="center8 centerBg">
+        .left8,.center8{float:left;width:300px;}
+    </div>
+    <div class="right8 rightBg">
+        .right8{margin-left:600px;}
+    </div>
+</div>
+<h4>利用float+overflow实现</h4>
+<div class="heightAdd">
+    <div class="left9 leftBg">
+        .left9,.center9{float:left;width:300px;}
+    </div>
+    <div class="center9 centerBg">
+        .left9,.center9{float:left;width:300px;}
+    </div>
+    <div class="right9 rightBg">
+        .right9{overflow:hidden;}
+    </div>
+</div>
+<h4>利用table实现</h4>
+<div class="parent-table heightAdd">
+    <div class="left10 leftBg">
+        .left10{display:table-cell;width:300px;}
+    </div>
+    <div class="center10 centerBg">
+        .center10{display:table-cell;width:300px;}
+    </div>
+    <div class="right10 rightBg">
+        .right10{display:table-cell;}
+    </div>
+</div>
+<h4>利用flex实现</h4>
+<div class="parent-flex heightAdd">
+    <div class="left11 leftBg">
+        .left11,.center11{width:300px;}
+    </div>
+    <div class="center11 centerBg">
+        .left11,.center11{width:300px;}
+    </div>
+    <div class="right11 rightBg">
+        .right11{flex:1}
+    </div>
+</div>
+
+<h3>两侧定宽，中栏自适应</h3>
+<h4>利用float+margin实现</h4>
+<div class="heightAdd" style="overflow:hidden;">
+    <div class="left12 leftBg">
+        .left12  {width:300px; float:left;}
+    </div>
+    <div class="center12 centerBg">
+        .center12{float:left;width:100%;margin-right:-600px;}
+    </div>
+    <div class="right12 rightBg">
+        .right12 {width:300px;float:right;}
+    </div>
+</div>
+<h4>利用table实现</h4>
+<div class="parent-table heightAdd">
+    <div class="left13 leftBg">
+        .left13{display:table-cell;width:300px;}
+    </div>
+    <div class="center13 centerBg">
+        .center13{display:table-cell;}
+    </div>
+    <div class="right13 rightBg">
+        .right13{display:table-cell;width:300px;}
+    </div>
+</div>
+<h4>利用flex实现</h4>
+<div class="parent-flex heightAdd">
+    <div class="left14 leftBg">
+        .left14{width:300px;}
+    </div>
+    <div class="center14 centerBg">
+        .center14{flex:1;}
+    </div>
+    <div class="right14 rightBg">
+        .right14{width:300px;}
+    </div>
+</div>
+
+<h3>一列不定宽，一列自适应</h3>
+<h4>利用float+overflow实现</h4>
+<div class="heightAdd">
+    <div class="left15 leftBg">
+        .left15{float:left;}
+    </div>
+    <div class="right15 rightBg">
+        .right15{overflow:hidden;}
+    </div>
+</div>
+<h4>利用flex实现</h4>
+<div class="parent-flex heightAdd">
+    <div class="left16 leftBg">
+        some thing more........**
+    </div>
+    <div class="right16 rightBg">
+        .right{flex:1;}
+    </div>
+</div>
+
+<h3>多列等分布局</h3>
+<h4>实用float实现</h4>
+<div class="parent17 heightAdd">
+    <div class="column17 columnBg">1</div>
+    <div class="column17 columnBg">1</div>
+    <div class="column17 columnBg">1</div>
+    <div class="column17 columnBg">1</div>
+</div>
+<h4>利用table实现</h4>
+<div class="parent18-fix">
+    <div class="parent18 heightAdd">
+        <div class="column18 columnBg">1</div>
+        <div class="column18 columnBg">1</div>
+        <div class="column18 columnBg">1</div>
+        <div class="column18 columnBg">1</div>
+    </div>
+</div>
+<h4>利用flex实现</h4>
+<div class="parent-flex heightAdd">
+    <div class="column19 columnBg">1</div>
+    <div class="column19 columnBg">1</div>
+    <div class="column19 columnBg">1</div>
+    <div class="column19 columnBg">1</div>
+</div>
+
+<h3>九宫格布局</h3>
+<h4>使用table实现</h4>
+<div class="parent-table">
+    <div class="row20"><div class="item20 showBorder"></div><div class="item20 showBorder"></div><div class="item20 showBorder"></div></div>
+    <div class="row20"><div class="item20 showBorder"></div><div class="item20 showBorder"></div><div class="item20 showBorder"></div></div>
+    <div class="row20"><div class="item20 showBorder"></div><div class="item20 showBorder"></div><div class="item20 showBorder"></div></div>
+</div>
+<h4>实用flex实现</h4>
+<div class="parent21">
+    <div class="row21"><div class="item21 showBorder"></div><div class="item21 showBorder"></div><div class="item21 showBorder"></div></div>
+    <div class="row21"><div class="item21 showBorder"></div><div class="item21 showBorder"></div><div class="item21 showBorder"></div></div>
+    <div class="row21"><div class="item21 showBorder"></div><div class="item21 showBorder"></div><div class="item21 showBorder"></div></div>
+</div>
+
+<h3>全屏布局</h3>
+<h4>利用绝对定位实现</h4>
+<div class="parent22 showBorder">
+    <div class="top22 showBorder">top</div>
+    <div class="left22 showBorder">left</div>
+    <div class="right22 showBorder">right</div>
+    <div class="bottom22 showBorder">bottom</div>
+</div>
+<h4>利用flex实现</h4>
+<div class="parent23 showBorder">
+    <div class="top23 showBorder">top</div>
+    <div class="middle23 showBorder">
+        <div class="left23 showBorder">left</div>
+        <div class="right23 showBorder">right</div>
+    </div>
+    <div class="bottom23 showBorder">bottom</div>
+</div>
+
+<h3>CSS 3 Switch</h3>
+<div class="canvas">
+    <div class="switch">
+        <div class="screws">
+            <span class="screw">*</span>
+            <span class="screw">*</span>
+            <span class="screw">*</span>
+            <span class="screw">*</span>
+        </div>
+        <div class='switch-button-outer'>
+            <div class="switch-button">
+                <div class="switch-button-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Checked -->
+    <div class="switch checked">
+        <div class="screws">
+            <span class="screw">*</span>
+            <span class="screw">*</span>
+            <span class="screw">*</span>
+            <span class="screw">*</span>
+        </div>
+        <div class='switch-button-outer'>
+            <div class="switch-button">
+                <div class="switch-button-inner"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="toggle">
+        <input type="checkbox">
+        <span class="button"></span>
+        <span class="label">+</span>
+    </div>
+    <div class="toggle">
+        <input type="checkbox" checked>
+        <span class="button"></span>
+        <span class="label">–</span>
+    </div>
+</div>
+<script src="js/index.js"></script>
+
+</body>
+
+</html>
