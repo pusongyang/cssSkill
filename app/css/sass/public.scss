@@ -1,0 +1,105 @@
+/* public */
+
+/* 清除浮动 */
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+
+/* 定义盒模型为怪异和模型（宽高不受边框影响） */
+.boxSiz{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 强制换行 */
+.toWrap{
+    word-break: break-all;       /* 只对英文起作用，以字母作为换行依据。 */
+    word-wrap: break-word;      /* 只对英文起作用，以单词作为换行依据。*/
+    white-space: pre-wrap;     /* 只对中文起作用，强制换行。*/
+}
+
+/* 禁止换行 */
+.noWrap{
+    white-space:nowrap;
+}
+
+/* 禁止换行,超出省略号 */
+.noWrapEllipsis{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* 文字两端对齐 */
+.text-justify{
+    text-align:justify;
+    text-justify:inter-ideograph;
+}
+
+/* 定义盒模型为 flex布局兼容写法并让内容水平垂直居中 */
+.flex-center{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -o-box;
+    display: box;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -o-box-pack: center;
+    box-pack: center;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -o-box-align: center;
+    box-align: center;
+}
+/* public end */
+
+//禁止ios和android用户选中文字
+.css{-webkit-user-select:none}
+//禁止ios长按时触发系统的菜单，禁止ios&android长按时下载图片
+.css{-webkit-touch-callout: none}
+//webkit去除表单元素的默认样式
+.css{-webkit-appearance:none;}
+//修改webkit表单输入框placeholder的样式
+input::-webkit-input-placeholder{color:#AAAAAA;}
+input:focus::-webkit-input-placeholder{color:#EEEEEE;}
+//去除android a/button/input标签被点击时产生的边框 & 去除ios a标签被点击时产生的半透明灰色背景
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+//ios使用-webkit-text-size-adjust禁止调整字体大小
+body{-webkit-text-size-adjust: 100%!important;}
+//android 上去掉语音输入按钮
+input::-webkit-input-speech-button {display: none}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,14 @@
 // Since this switch is only meant for modern browsers, there is not any code for supporting old browsers
-
+var object=null;
+if(Object.hasOwnProperty("create")){
+    object=Object.create;
+}else{
+    object=function object(o){
+        function F(){}
+        F.prototype=o;
+        return new F();
+    };
+}
 function Switch(node) {
 	this.switchRoot = node;
 	this.switchRoot.onclick = this.switchClickEventHanlder;
